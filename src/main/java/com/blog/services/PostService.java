@@ -2,6 +2,7 @@ package com.blog.services;
 
 import com.blog.entites.Post;
 import com.blog.playloads.PostDto;
+import com.blog.playloads.PostResponse;
 
 import java.util.List;
 
@@ -21,7 +22,7 @@ public interface PostService {
     //get all posts
 
 //    PostResponse getAllPost(Integer pageNumber,Integer pageSize,String sortBy,String sortDir);
-        List<PostDto> getAllPost();
+PostResponse getAllPost(Integer pageNumber , Integer pageSize,String sortBy);
     //get single post
 
     PostDto getPostById(Integer postId);
@@ -34,5 +35,5 @@ public interface PostService {
     List<PostDto> getPostsByUser(Integer userId);
 
     //search posts
-    List<Post> searchPosts(String keyword);
+    List<PostDto> searchPosts(String keyword);
 }
